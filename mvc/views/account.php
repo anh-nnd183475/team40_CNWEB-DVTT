@@ -31,14 +31,15 @@
 		<link rel="stylesheet" type="text/css" href="public/css/account.css">
 		<link rel="stylesheet" href="public/css/nav_bar.css" type="text/css">
 		<link rel="stylesheet" href="public/css/footer_container.css" type="text/css">
-		<title>Home | MTHH</title>
+		<title>HOME</title>
+		<link rel="shortcut icon" type="image/png" href="images/logoicon.png" />
 	</head>
 	<body>
 		<!-- includes nav bar -->
 		<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'nav_bar.php'; ?>
 		<div class="container">
 			<form id = "form1">
-                    <h3>TẠO TÀI KHOẢN</h3>
+                    <h2>TẠO TÀI KHOẢN</h2>
                     <input type="text" name="username" placeholder="Username" id="username" title="usename không quá 50 kí tự và không được để trống" required>
                     <input type="password" name="password" placeholder="Password" title="password không quá 50 kí tự và không được để trống" id="password" required>
                     <input type="password" name="check_password" placeholder="Confirm Password" id="check_password" required>
@@ -48,16 +49,16 @@
 			</form>
 			<form id = "form2">
                     <h3>ĐỊA CHỈ</h3>
-                    <input type="text" name="add_1" id="add_1" placeholder="Tỉnh">
-                    <input type="text" name="add_2" id="add_2" placeholder="Huyện">
-                    <input type="text" name="add_3" id="add_3" placeholder="Xã">
+                    <input type="text" name="add_1" id="add_1" placeholder="Tỉnh/ Thành phố">
+                    <input type="text" name="add_2" id="add_2" placeholder="Quận/ Huyện">
+                    <input type="text" name="add_3" id="add_3" placeholder="Phường/ Xã">
                     <div class="btn-box">
                     	<button type = "button" id = "back1">Back</button>
                     	<button type = "button" id = "next2">Next</button>
                     </div>
 			</form>
 			<form id = "form3" action="" method="POST">
-                    <h3>THÔNG TIN CÁ NHÂN</h3>
+                    <h2>THÔNG TIN CÁ NHÂN</h2>
                     <input type="text" name="username" id="user_name" style="display: none">
                     <input type="password" name="password" id="your_password" style="display:none">
                     <input type="text" name="address" id="address" style="display:none">
@@ -72,13 +73,13 @@
 			<div class="step-row">
                     <div id="progress"></div>
                     <div class="step-col">
-                    	<small>Step 1</small>
+                    	<small>Bước 1</small>
                     </div>
                     <div class="step-col">
-                    	<small>Step 2</small>
+                    	<small>Bước 2</small>
                     </div>
                     <div class="step-col">
-                    	<small>Step 3</small>
+                    	<small>Bước 3</small>
                     </div>
 			</div>
 		</div>

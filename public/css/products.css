@@ -26,17 +26,19 @@ sup {
 /*   border: 1px solid; */
 }
 .title {
-  background: #3daab7;
+  background: #D3D3D3;
   padding: 10px;
-  color: #fff;
+  color: #602D8D;
   margin: 10px 0px;
+  text-transform: uppercase;
 }
 #xem {
-  color: orange;
+  color: black;
+  padding: 3px 5px;
   border: 1px solid;
 }
 #xem:hover {
-  color: green;
+  color: orange;
 }
 /*all-product*/
 .all-product {
@@ -178,7 +180,7 @@ sup {
   color: #f1f1f1;
 }
 .active {
-  background-color: green;
+  background-color: #286DA8;
   color: white;
 }
 .sidenav span {

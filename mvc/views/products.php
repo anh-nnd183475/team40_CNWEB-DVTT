@@ -2,6 +2,13 @@
 	require_once ROOT . DS . 'services' . DS . 'products' . DS . 'LaptopServices.php';
 	require_once ROOT . DS . 'services' . DS . 'products' . DS . 'PCServices.php';
 	require_once ROOT . DS . 'services' . DS . 'products' . DS . 'ComputerMouseProductsServices.php';
+	if (!function_exists('currency_format')) {
+		function currency_format($number, $suffix = 'đ') {
+			if (!empty($number)) {
+				return number_format($number, 0, ',', '.') . "{$suffix}";
+			}
+		}
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +19,8 @@
 		<link rel="stylesheet" type="text/css" href="public/css/products.css" >
 		<link rel="stylesheet" href="public/css/footer_container.css">
 		<link rel="stylesheet" href="public/css/nav_bar.css">
-		<title>Products | MTHH</title>
+		<title>PRODUCTS</title>
+		<link rel="shortcut icon" type="image/png" href="images/logoicon.png" />
 	</head>
 	<body>
 		<!-- includes nav bar -->
@@ -31,26 +39,29 @@
 						<a href="search&label=all&supplier=dell">DELL<!--<span>(30000)</span>--></a>
 						<a href="search&label=all&supplier=hp">HP<!--<span>(30000)</span>--></a>
 						<a href="search&label=all&supplier=logitech">LOGITECH<!--<span>(30000)</span>--></a>
-						<a href="search&label=all&supplier=avita">AVITA<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&supplier=acer">ACER<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&supplier=lenovo">LENOVO<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&supplier=asus">ASUS<!--<span>(30000)</span>--></a>
 					</div>
 					<button class="dropdown-btn">Giá tiền<i class = "fa fa-plus"></i></button>
 					<div class="dropdown-container">
-						<a href="search&label=all&price=1">1.000.000 - 2.000.000<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&price=1"> < 2.000.000<!--<span>(30000)</span>--></a>
 						<a href="search&label=all&price=2">2.000.000 - 10.000.000<!--<span>(30000)</span>--></a>
 						<a href="search&label=all&price=10">10.000.000 - 20.000.000<!--<span>(30000)</span>--></a>
-						<a href="search&label=all&price=20">20.000.000 - <!--<span>(30000)</span>--></a>
+						<a href="search&label=all&price=20"> > 20.000.000  <!--<span>(30000)</span>--></a>
 					</div>
 					<button class="dropdown-btn">Cân nặng<i class = "fa fa-plus"></i></button>
 					<div class="dropdown-container">
-						<a href="search&label=all&weigh=1">Nhỏ hơn 1kg<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&weigh=1">< 1kg<!--<span>(30000)</span>--></a>
 						<a href="search&label=all&weigh=2">1kg - 2kg<!--<span>(30000)</span>--></a>
 						<a href="search&label=all&weigh=3">2kg - 3kg<!--<span>(30000)</span>--></a>
-						<a href="search&label=all&weigh=4">Lớn hơn 3kg<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&weigh=4">> 3kg<!--<span>(30000)</span>--></a>
 					</div>
 					<button class="dropdown-btn">Hệ điều hành<i class = "fa fa-plus"></i></button>
 					<div class="dropdown-container">
 						<a href="search&label=all&os=windows">Windows</a>
 						<a href="search&label=all&os=linux">Linux</a>
+						<a href="search&label=all&os=free dos">Free DOS</a>
 						<!-- <a href="all_products_page.php?view=view&id_price=200000"><200000đ</a>
 						<a href="all_products_page.php?view=view&id_price=200000"><200000đ</a> -->
 					</div>
@@ -74,11 +85,11 @@
 					?>
 					<div class="col-4">
 						<div class="product-grid">
-                                                    <a href="<?php echo "details/" . $laptop->getProductID() . "/" . $path ?>">
+                                <a href="<?php echo "details/" . $laptop->getProductID() . "/" . $path ?>">
 								<div class="product-image">
-                                                                        <img src=<?php echo "\"" . $laptop->getImage() . "\"" ?> >
-									<span class="product-trend-label">Xem sản phẩm</span>
-									<span class="product-discount-label">50%</span>
+                                    <img src=<?php echo "\"" . $laptop->getImage() . "\"" ?> >
+									<span class="product-trend-label">Chi tiết</span>
+									<span class="product-discount-label">20%</span>
 									<!--<ul class="social">
 										<li><a href="<?php?>" data-toggle="tooltip" data-placement="top" title="Add to cart"><i class = "fa fa-shopping-cart" onclick="cart_change()"></i></a></li>
 										<li><a href="#" data-toggle="tooltip" data-placement="top" title="Wish List"><i class = "fa fa-heart"></i></a></li>
@@ -88,7 +99,7 @@
                                                                 </div>
                                                     </a>
                                                     <div class="product-content">
-							<p><?php echo $laptop->getPrice() . " VNĐ"; ?><sup color='red';>đ</sup></p>
+							<p style="font-size: 20px; color: red"><?php echo currency_format($laptop->getPrice()) ; ?></p>
                                                     </div>
 						</div>
 					</div>
@@ -115,8 +126,8 @@
 							<a href="<?php echo "details/" . $pc->getProductID() . "/" . $path ?>">
 								<div class="product-image">
 									<img src=<?php echo "\"" . $pc->getImage() . "\"" ?> >
-									<span class="product-trend-label">Xem sản phẩm</span>
-									<span class="product-discount-label">50%</span>
+									<span class="product-trend-label">Chi tiết</span>
+									<span class="product-discount-label">20%</span>
 									<!--<ul class="social">
 										<li><a href="<?php?>" data-toggle="tooltip" data-placement="top" title="Add to cart"><i class = "fa fa-shopping-cart" onclick="cart_change()"></i></a></li>
 										<li><a href="#" data-toggle="tooltip" data-placement="top" title="Wish List"><i class = "fa fa-heart"></i></a></li>
@@ -126,7 +137,7 @@
 								</div>
 							</a>
 							<div class="product-content">
-								<p><?php echo $pc->getPrice() . " VNĐ"; ?><sup color='red';>đ</sup></p>
+							<p style="font-size: 20px; color: red"><?php echo currency_format($pc->getPrice()) ; ?></p>
 							</div>
 						</div>
 					</div>
@@ -154,8 +165,8 @@
 								<a href="<?php echo "details/" . $mouse->getProductID() . "/" . $path ?>">
 									<div class="product-image">
 										<img src=<?php echo "\"" . $mouse->getImage() . "\"" ?> >
-										<span class="product-trend-label">Xem sản phẩm</span>
-										<span class="product-discount-label">50%</span>
+										<span class="product-trend-label">Chi tiết</span>
+										<span class="product-discount-label">20%</span>
 										<!--<ul class="social">
 											<li><a href="<?php;?>" data-toggle="tooltip" data-placement="top" title="Add to cart"><i class = "fa fa-shopping-cart" onclick="cart_change()"></i></a></li>
 											<li><a href="#" data-toggle="tooltip" data-placement="top" title="Wish List"><i class = "fa fa-heart"></i></a></li>
@@ -165,7 +176,8 @@
 									</div>
 								</a>
 								<div class="product-content">
-									<p><?php echo $mouse->getPrice() . " VNĐ"; ?><sup color='red';>đ</sup></p>
+								<p style="font-size: 20px; color: red"><?php echo currency_format($mouse->getPrice()) ; ?></p>
+			
 								</div>
 							</div>
 						</div>

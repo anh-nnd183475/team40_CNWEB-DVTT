@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   padding: 20px;
-  background: #3c3c3c;
+  background: #286DA8;
   height: 80px;
 /*   flex-wrap: nowrap; */
 }
@@ -32,14 +32,14 @@
   font-size: 16px;
   transition: all 0.5s;
   border: 1px solid transparent;
-  padding: 5px 2px;
+  padding: 8px 4px;
   border-radius: 3px;
 }
 .nav_bar nav ul li a:hover {
-  color: #ff0000;  border: 3px solid white;
+  color: whitesmoke;  border: 3px solid white;
 }
 .nav_bar nav ul li span {
-  color: #c1ff00;
+  color: white;
 }
 .menu {
   text-align: center;

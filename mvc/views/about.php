@@ -9,32 +9,78 @@
 		<link rel="stylesheet" href="public/css/about.css" type="text/css">
 		<link rel="stylesheet" href="public/css/footer_container.css" type="text/css">
 		<link rel="stylesheet" href="public/css/nav_bar.css" type="text/css">
-		<title>About | MTHH</title>
+		<title>ABOUT US</title>
+		<link rel="shortcut icon" type="image/png" href="images/logoicon.png" />
 	</head>
 	<body>
 		<!-- includes nav bar -->
 		<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'nav_bar.php'; ?>
-		<div class="about_container" style="font-family: 'Pacifico', cursive;">
-			<div class="title">
-				<h1>Tại sao lại chọn chúng tôi ?</h1>
-				<q>Mọi ngày làm việc của chúng tôi là đem tới cho khách hàng những trải nghiệm tốt hơn</q>
+		<div class="about_container" style="font-family: 'Monda', sans-serif; cursive;">
+			<div class="title" >
+				<h2 style="font-size: 35px">Tại sao bạn nên chọn chúng tôi ?</h2>
 			</div>
-			<div class="row">
-				<div class="col-2">
-					<i class="fa fa-star-o" aria-hidden="true"></i>
-					<h4>Trả lời nhanh</h4>
-					<p>Hệ thống chúng tôi luôn có nhân viên trực 24/24 sẵn sàng trả lời mọi thắc mắc của các bạn.</p>
-					<h4>Hộ trợ tận tình</h4>
-					<p>Nếu bạn không biết đâu là sản phẩm phù hợp với bạn, nhân viên của chúng tôi có thể giúp bạn.</p>
-					<h4>Chúng tôi quan tâm tới từng chi tiết</h4>
-					<p>Những chi tiết dù là nhỏ nhất chún tôi cũng luôn luôn không bỏ qua để mang lại cho bạn trải nghiệm tốt hơn mỗi ngày. </p>
-					<br><br>
-					<img src="images/about/about1.jpg">
-				</div>
-				<div class="col-2">
-					<img src="images/about/about2.jpg">
-					<br>
-					<img src="images/about/about3.jpg" id = 'small'>
-				</div>
-			</div>
+		</div>	
+			<!-- Slideshow container -->
+		<div class="slideshow-container">
+
+		<!-- Full-width images with number and caption text -->
+			<div class="mySlides fade">
+			
+			<img src="public/images/banner4.png" style="width:100%">
+			
 		</div>
+
+		<div class="mySlides fade">
+			
+			<img src="public/images/banner5.png" style="width:100%">
+			
+		</div>
+
+		<div class="mySlides fade">
+			
+			<img src="public/images/banner6.png" style="width:100%">
+			
+		</div>
+
+		<!-- Next and previous buttons -->
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		<br>
+
+		<!-- The dots/circles -->
+		<div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1)"></span>
+			<span class="dot" onclick="currentSlide(2)"></span>
+			<span class="dot" onclick="currentSlide(3)"></span>
+		</div>
+<script>
+		let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>

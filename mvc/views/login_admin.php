@@ -33,7 +33,8 @@ if(isset($_SESSION['admin_username']) && isset($_SESSION['admin_password'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="public/css/login_admin.css">
-    <title>Login Admin</title>
+    <title>LOG IN</title>
+    <link rel="shortcut icon" type="image/png" href="images/logoicon.png" />
 </head>
 
 <body>

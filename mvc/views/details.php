@@ -1,6 +1,13 @@
 <?php
 ob_start();
 session_start();
+if (!function_exists('currency_format')) {
+	function currency_format($number, $suffix = 'đ') {
+		if (!empty($number)) {
+			return number_format($number, 0, ',', '.') . "{$suffix}";
+		}
+	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +51,8 @@ session_start();
             return true;
 	}
 	</script>
-	<title>Product Detail | MTHH</title>
+	<title>PRODUCT</title>
+    <link rel="shortcut icon" type="image/png" href="../public/images/logoicon.png" />
 </head>
 <body>
 	<!-- includes nav bar -->
@@ -69,7 +77,7 @@ session_start();
 		</div>
 		<div class='desc' >
                     <div class='name'><h3><?php echo $product->getModel() ?></h3></div><br /><br />
-                    <div><b>Giá bán</b>: <?php echo $product->getPrice() ?> đồng</div>
+                    <div><b>Giá bán</b>: <p style="font-size: 20px; color: red"><?php echo currency_format($product->getPrice()) ; ?></p></div>
                     <div><b>Cân nặng</b>: <?php echo $product->getWeigh() ?> kg</div>
                     <div><b>Màu sắc</b>: <?php echo $product->getColor() ?></div>
                     <div><b>Thương hiệu</b>: <?php echo $product->getSupplier() ?></div>
@@ -123,7 +131,7 @@ session_start();
 	<form action="" method="POST" onsubmit="return validCart();">
 		<div class="add-product" style="padding-top: 50px;position: relative;margin-bottom: 30px;/* justify-content: space-between; */">
                     <input class="number" type="number" name="number" min="1" value="1">
-                    <input class="add" type="submit" value="Thêm vào giỏ hàng" style="margin-left:30px;">
+                    <input class="add" type="submit" value="Thêm vào giỏ hàng" style="margin:0px 30px;">
 		</div>
 	</form>
 	<?php
@@ -140,7 +148,7 @@ session_start();
 	?>
 	<!-- allow user to evaluate -->
 	<br />
-	<div>Đánh giá trung bình : <?php
+	<div style="margin: 0px 20px">Đánh giá trung bình : <?php
             $evaluateService = new EvaluateServices();
             $listEvaluates = $evaluateService->getAll($product->getProductID());
             $avg = 0.0;
@@ -149,7 +157,7 @@ session_start();
             }
 
             if(count($listEvaluates) == 0){
-            		echo "(Chưa có đánh giá cho sản phâm này)";
+            		echo "(Chưa có đánh giá cho sản phẩm này)";
             } else {
             		$avg = $avg / count($listEvaluates);
             		echo round($avg, 2) . "*";
@@ -159,9 +167,10 @@ session_start();
 	<div class='cmt-title'><b>Đánh giá của bạn</b></div>
 	<form action="" method="POST" onsubmit="return validComment();">
 		<div class='your-evaluate'>
-                    <div class='your-star'><b>Đánh giá trung bình</b>: <input class='rating' type="number" name="star" min="1" max="5" value="5"></div>
+                    <div class='your-star'><b>Chấm điểm (/5)</b>: <input class='rating' type="number" name="star" min="1" max="5" value="5"></div>
                     <div class='your-cmt'><b>Bình luận</b>: </div>
                     <textarea class='comment' rows='1' name="cmt" placeholder='Hãy để lại bình luận của bạn' id="your_comment"></textarea>
+                    <br/>
                     <input class='submit' type='submit' value='Gửi' id="submit_evaluate">
 		</div>
 	</form>

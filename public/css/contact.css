@@ -54,7 +54,7 @@ body {
 .contact_container .col-2 h1{
 	margin: 20px 0;
 	font-size: 60px;
-	color: #D5C706;
+	color: #602D8D;
 }
 .contact_container .col-2 h4 {
 	margin: 5px;
@@ -91,7 +91,7 @@ body {
 	border-radius: 30px;
 	width: 100px;
 	height: 40px;
-	background: linear-gradient(to right, #fff, #EAF733);
+	background: linear-gradient(to right, #602D8D, white);
 	color: #1f1f1f;
 	float: left;
 	border: none;

@@ -4,7 +4,9 @@
     font-size: 30px;
     padding-top: 20px;
     padding-bottom: 20px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Monda', sans-serif;
+    color: #602D8D;
+    margin-left: 10px;
 }
 
 .info {
@@ -14,6 +16,7 @@
    
 }
 .info .img {
+    margin: 10px 20px;
     flex-basis: 50%;
 }
 .info .img img {
@@ -23,7 +26,7 @@
 
 .info .desc {
     flex-basis: 50%;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Monda', sans-serif;
 /*     border: 1px solid; */
 }
 
@@ -33,6 +36,8 @@
     padding-top: 20px;
     padding-bottom: 20px;
     font-size: 30px;
+    font-family: 'Monda', sans-serif;
+    color: #602D8D;
 }
 
 .desc div {
@@ -52,7 +57,7 @@
 
 .add {
     height: 40px;
-    background: #b1154a;
+    background:  #602D8D;
     border-radius: 5px;
     color: white;
     border: 1px solid #b1154a;
@@ -68,7 +73,7 @@
 .number {
     height: 40px;
     border-radius: 5px;
-    border: 1px solid #b1154a;
+    border: 1px solid #602D8D;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 45px;
@@ -81,16 +86,14 @@
     width: 100%;
     height: 60px;
     font-size: 30px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding:15px 15px;
     font-family: 'Times New Roman', Times, serif;
 }
 
 .your-evaluate {
     width: 100%;
     font-family: 'Times New Roman', Times, serif;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px 10px;
     margin-bottom: 10px;
 }
 
@@ -115,21 +118,22 @@
     width: 60px;
     height: 30px;
     border-radius: 5px;
-    border: 1px solid #b1154a;
-    background-color: #b1154a;
+    margin: 0px 15px;
+    border: 1px solid white;
+    background-color: #602D8D;
     color: white;
     
 }
 
 .submit:hover {
-    background-color: crimson;
+    background-color: #602D8D;
 }
 
 .comment {
-    width: 100%;
+    width: 98%;
     height: 100px;
     border-radius: 5px;
-    border: 1px solid #b1154a;
+    border: 1px solid #602D8D;
     padding: 10px;
     margin-bottom: 10px;
 }
@@ -137,11 +141,9 @@
 .evaluate {
     width: 100%;
     font-family: 'Times New Roman', Times, serif;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    margin-bottom: 10px;
-    border: 2px solid #b1154a;
+    padding: 10px 10px;
+    margin:10px 15px;
+    border: 2px solid #602D8D;
     border-radius: 10px;
 }
 

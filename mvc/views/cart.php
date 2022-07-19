@@ -15,10 +15,16 @@ if(!isset($_SESSION['username']) || $_SESSION['username'] == ''){
 		<link rel="stylesheet" href="public/css/footer_container.css">
 		<link rel="stylesheet" href="public/css/nav_bar.css">
 		<script type="text/javascript" src = "public/javascript/cart.js"></script>
-		<title>Products | MTHH</title>
+		<title>YOUR CART</title>
+		<link rel="shortcut icon" type="image/png" href="images/logoicon.png" />
 	</head>
 	<body>
 		<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'nav_bar.php'; ?>
+		<div class="tit_container" style="font-family: 'Monda', sans-serif; cursive;">
+			<div class="title" >
+				<h2>Giỏ hàng của bạn</h2>
+			</div>
+		</div>	
 		<div class="cart">
 			<div class="small-container cart-page">
                             <table id="table">
@@ -47,7 +53,7 @@ if(!isset($_SESSION['username']) || $_SESSION['username'] == ''){
                             		<input type="text" value="<?php echo $product->getPrice() ?>" class="price" style="display : none">
                             		<input type="text" name="product_id" value="<?php echo $product->getProductID() ?>" style="display: none">
                             		<input type="submit" style="display:none" id="submit_delete">
-                            		<a href="javascript:void(0);" onclick="remove_form()">Remove</a>
+                            		<a href="javascript:void(0);" onclick="remove_form()">Xóa sản phẩm</a>
                             	</form>
                             </div>
                             			</div>

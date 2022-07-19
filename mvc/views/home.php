@@ -1,5 +1,12 @@
 <?php
 require_once ROOT . DS . 'services' . DS . 'products' . DS . 'LaptopServices.php';
+if (!function_exists('currency_format')) {
+	function currency_format($number, $suffix = 'đ') {
+		if (!empty($number)) {
+			return number_format($number, 0, ',', '.') . "{$suffix}";
+		}
+	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +43,9 @@ require_once ROOT . DS . 'services' . DS . 'products' . DS . 'LaptopServices.php
 					// console.log(col_1.style.display)
 			}
 		</script>
-		<title>Home | MTHH</title>
+		<title>HOME | ADCA</title>
+		<link rel="shortcut icon" type="image/png" href="images/logoicon.png" />
+
 	</head>
 	<body>
 		<!-- includes nav bar -->
@@ -56,32 +65,20 @@ require_once ROOT . DS . 'services' . DS . 'products' . DS . 'LaptopServices.php
 			<div class="slides" id="home">
 				<div class="row">
 					<div class="col-2" id="col-2-1" style="padding-left:10%;">
-						<h1>Tìm kiếm những mẫu máy tính mới nhất của chúng tôi!</h1><br>
-						<q>Khai thông sức mạnh, dẫn đâu xu hướng</q><br>
-						<a href="products" class = "btn">Khám phá ngay&#8594;</a>
+						<h1 style="color: white">ADCA LAPTOP </h1><br>
+						<h3 style="color: white">LUÔN CÓ THỨ PHÙ HỢP VỚI BẠN</h3><br>
+						<a href="products" class = "btn">XEM SẢN PHẨM &#8594;</a>
 					</div>
 					<div class="col-2" id="col-2-2" style="padding-left:10%; display : none">
-						<h1>Xem thêm về chúng tôi để hiểu hơn về chúng tôi và Team MTHH</h1><br>
-						<q>MTHH Team</q><br>
-						<a href="about" class = "btn">Xem giới thiệu&#8594;</a>
+						<h1 style="color: white">HÃY XEM THÊM VỀ CHÚNG TÔI</h1><br>
+						<a href="about" class = "btn">XEM GIỚI THIỆU&#8594;</a>
 					</div>
-					<div class="col-2" style="min-height : 648px;">
-						<img id="img-1" src="public/images/logo/laptophome.png">
-						<img id="img-2" src="public/images/logo/aboutme.png" style="display:none">
+					<div class="col-2" style="min-height : 600px;">
+						<img id="img-1" src="public/images/logo/logobanner4.png">
+						<img id="img-2" src="public/images/logo/logobanner5.jpg" style="display:none">
 					</div>
 				</div>
 			</div>
-
-			<!-- <div class="slides" id="collection">
-				<img src="https://lumen.thinkpro.vn//backend/uploads/baiviet/2021/4/9/microsoft365_thumb.jpg">
-			</div>
-			<br />
-			<div style="text-align:center">
-				<span class="dot" onclick="currentSlide(1)"></span>
-				<span class="dot" onclick="currentSlide(1)"></span>
-			</div>
-			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-			<a class="next" onclick="plusSlides(1)">&#10095;</a> -->
 			<a class="prev" onclick="convert()">&#10094;</a>
 			<a class="next" onclick="convert()">&#10095;</a>
 		</div>
@@ -91,23 +88,27 @@ require_once ROOT . DS . 'services' . DS . 'products' . DS . 'LaptopServices.php
 				<h1 class = "title">Danh mục sản phẩm</h1>
 				<div class="row">
 					<div class="col-3">
+						<h3>LAPTOP</h3>
 						<a href="search&label=laptop"><img src="public/images/logo/laptoplabel.jpg"></a>
-						<h3>Laptop</h3>
+						
 					</div>
 					<div class="col-3">
-						<a href="search&label=pc"><img src="public/images/logo/pclabel.webp"></a>
 						<h3>PC</h3>
+						<a href="search&label=pc"><img src="public/images/logo/pclabel.webp"></a>
+						
 					</div>
 					<div class="col-3">
+						<h3>GEARS</h3>
 						<a href="search&label=mouse"><img src="public/images/logo/mouselabel.jpg"></a>
-						<h3>Phụ kiện</h3>
+						
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="featured_products">
 			<div class="small-container">
-				<h1 class = "title">Sản phẩm mới nhất</h1>
+			<hr style="height:2px;border:none;color:#602D8D;background-color:#333;" />	
+			<h1 class = "title">Sản phẩm mới nhất</h1>				
 				<div class="row">
 					<!-- insert new products -->
 					<?php $service = new LaptopServices();
@@ -127,7 +128,8 @@ require_once ROOT . DS . 'services' . DS . 'products' . DS . 'LaptopServices.php
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star-o"></i>
 						</div>
-						<p><?php echo $laptop->getPrice() . " VNĐ" ?></p>
+						<hr/>
+						<p style="font-size: 20px; color: red"><?php echo currency_format($laptop->getPrice()) ; ?></p>
 					</div>
 					<?php
 					if($cnt > 2) break;
@@ -153,7 +155,8 @@ require_once ROOT . DS . 'services' . DS . 'products' . DS . 'LaptopServices.php
 		<!-- <div class="advertising">
 			<img src=<?php echo "/" . $path_project . "/" . "images/background/discount.jpg"?> height="500rem"><br /><br /><br /><br />
 		</div> -->
-		<h1 class = "title">Thương hiệu hợp tác</h1>
+		<hr style="height:2px;border:none;color:#602D8D;background-color:#333;" />
+		<h1 class = "title">SẢN PHẨM THEO THƯƠNG HIỆU</h1>
 		<div class="brands">
 			<div class="small-container">
 				<div class="row">

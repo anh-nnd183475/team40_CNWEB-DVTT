@@ -7,6 +7,13 @@ require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'Type.ph
 $service;
 $page;
 
+if (!function_exists('currency_format')) {
+	function currency_format($number, $suffix = 'đ') {
+		if (!empty($number)) {
+			return number_format($number, 0, ',', '.') . "{$suffix}";
+		}
+	}
+}
 	// assign value for GET['label']
 if(array_key_exists("label", $_GET)){
 		$label = $_GET['label'];
@@ -180,7 +187,8 @@ $lens = count($listProducts);				// number of product in search
 		<link rel="stylesheet" href="public/css/footer_container.css">
 		<link rel="stylesheet" href="public/css/nav_bar.css">
 		<link rel="stylesheet" href="public/css/search.css">
-		<title>Products | MTHH</title>
+		<title>PRODUCTS</title>
+		<link rel="shortcut icon" type="image/png" href="images/logoicon.png" />
 	</head>
 	<body>
 		<!-- includes nav bar -->
@@ -193,26 +201,29 @@ $lens = count($listProducts);				// number of product in search
 						<a href="search&label=all&supplier=dell">DELL<!--<span>(30000)</span>--></a>
 						<a href="search&label=all&supplier=hp">HP<!--<span>(30000)</span>--></a>
 						<a href="search&label=all&supplier=logitech">LOGITECH<!--<span>(30000)</span>--></a>
-						<a href="search&label=all&supplier=avita">AVITA<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&supplier=acer">ACER<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&supplier=lenovo">LENOVO<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&supplier=asus">ASUS<!--<span>(30000)</span>--></a>
 					</div>
 					<button class="dropdown-btn">Giá tiền<i class = "fa fa-plus"></i></button>
 					<div class="dropdown-container">
-						<a href="search&label=all&price=1">1.000.000 - 2.000.000<!--<span>(30000)</span>--></a>
+					<a href="search&label=all&price=1"> < 2.000.000<!--<span>(30000)</span>--></a>
 						<a href="search&label=all&price=2">2.000.000 - 10.000.000<!--<span>(30000)</span>--></a>
 						<a href="search&label=all&price=10">10.000.000 - 20.000.000<!--<span>(30000)</span>--></a>
-						<a href="search&label=all&price=20">20.000.000 - <!--<span>(30000)</span>--></a>
+						<a href="search&label=all&price=20"> > 20.000.000  <!--<span>(30000)</span>--></a>
 					</div>
 					<button class="dropdown-btn">Cân nặng<i class = "fa fa-plus"></i></button>
 					<div class="dropdown-container">
-						<a href="search&label=all&weigh=1">Nhỏ hơn 1kg<!--<span>(30000)</span>--></a>
+					<a href="search&label=all&weigh=1">< 1kg<!--<span>(30000)</span>--></a>
 						<a href="search&label=all&weigh=2">1kg - 2kg<!--<span>(30000)</span>--></a>
 						<a href="search&label=all&weigh=3">2kg - 3kg<!--<span>(30000)</span>--></a>
-						<a href="search&label=all&weigh=4">Lớn hơn 3kg<!--<span>(30000)</span>--></a>
+						<a href="search&label=all&weigh=4">> 3kg<!--<span>(30000)</span>--></a>
 					</div>
 					<button class="dropdown-btn">Hệ điều hành<i class = "fa fa-plus"></i></button>
 					<div class="dropdown-container">
-						<a href="search&label=all&os=windows">Windows</a>
+					<a href="search&label=all&os=windows">Windows</a>
 						<a href="search&label=all&os=linux">Linux</a>
+						<a href="search&label=all&os=free dos">Free DOS</a>
 						<!-- <a href="all_products_page.php?view=view&id_price=200000"><200000đ</a>
 						<a href="all_products_page.php?view=view&id_price=200000"><200000đ</a> -->
 					</div>
@@ -221,7 +232,7 @@ $lens = count($listProducts);				// number of product in search
 			<div class="all-product">
 				<div id="search">
 				<form action="" method="POST">
-					<input type="text" name="search_request" placeholder="nhập từ cần tìm kiếm vào đây..." id="request"><br />
+					<input type="text" name="search_request" placeholder="Hãy nhập từ khóa tìm kiếm..." id="request"><br />
 					<select name="search_label" id="search_label">
 						<option>Laptop</option>
 						<option>PC</option>
@@ -252,19 +263,13 @@ $lens = count($listProducts);				// number of product in search
 							<a href="<?php echo "details/" . $product->getProductID() . "/" . $path ?>">
 								<div class="product-image">
 									<img src=<?php echo "\"" . $product->getImage() . "\"" ?> >
-									<span class="product-trend-label">Xem sản phẩm</span>
-									<span class="product-discount-label">50%</span>
-									<ul class="social">
-										<li><a href="<?php;?>" data-toggle="tooltip" data-placement="top" title="Add to cart"><i class = "fa fa-shopping-cart" onclick="cart_change()"></i></a></li>
-										<li><a href="#" data-toggle="tooltip" data-placement="top" title="Wish List"><i class = "fa fa-heart"></i></a></li>
-										<li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class = "fa fa-random"></i></a></li>
-										<li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class = "fa fa-search"></i></a></li>
-									</ul>
+									<span class="product-trend-label">Chi tiết</span>
+									<span class="product-discount-label">20%</span>
 								</div>
 							</a>
 							<div class="product-content">
 								<p><?php echo $product->getModel() . "\n"?></p>
-								<p><?php echo $product->getPrice() . " VNĐ"; ?><sup color='red';>đ</sup></p>
+								<p style="font-size: 20px; color: red"><?php echo currency_format($product->getPrice()); ?></p>
 							</div>
 						</div>
 					</div>

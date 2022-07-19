@@ -6,7 +6,91 @@
 ul {
   list-style: none;
 }
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
 
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
 .row {
   display: flex;
   justify-content: space-around;
@@ -20,13 +104,13 @@ ul {
 }
 .about_container .title {
   text-align: center;
-  height: 100px;
-  margin-bottom: 30px;
-  color: #1f1f1f;
+  height: 80px;
+  margin-bottom: 5px;
+  color: #602D8D;
 }
-.about_container .title h1 {
+.about_container .title h2 {
   font-size: 60px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 .about_container .title q {
   margin: 20px 0;
@@ -82,7 +166,7 @@ ul {
       font-size: 1em; 
    }
     .about_container .title h1 {
-      font-size: 40px;
+      font-size: 20px;
     }
     .about_container .title q {
       font-size: 20px;

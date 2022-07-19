@@ -1,26 +1,35 @@
-.logout a {
-  background-color: #EEEEEE;
+.logout{
+  margin:20px 0px;
+}
+.logout-btn{
+  background-color: red;
+  margin: 10px 15px;
   padding: 8px 20px;
   text-decoration:none;
   font-weight:bold;
   border-radius:5px;
   cursor:pointer;
+  color: #fff;
 }
-
+.logout-btn:hover{
+  background-color: #602D8D;
+  color: black;
+}
 * {
     box-sizing: border-box;
   }
 .left {
     background-color: #2196F3;
     float: left;
-    width: 45%; /* The width is 20%, by default */
-    font-size: 3vw;
+    width: 30%; /* The width is 20%, by default */
+    font-size: 1vw;
     color: #fff;
     border: none;
     border-radius: 10px;
     margin-top: 5px;
-    margin-left: 50px;
+    margin-left: 20px;
     margin-right: 50px;
+    text-align: center;
   }
 
   .left:hover{
@@ -33,19 +42,23 @@
     margin-top: 0px;
     transition: 0.5s;
   }
-
+  .banner{
+    width: 85%;
+    margin: 15px 10px;
+  }
   .right {
-    background-color: #4CAF50;
+    background-color: #602D8D;
     float: left;
-    width: 45%; /* The width is 20%, by default */
-    font-size: 3vw;
+    width: 30%; /* The width is 20%, by default */
+    font-size: 1vw;
     color: #fff;
     border: none;
     border-radius: 10px;
     margin-top: 5px;
+    text-align: center;
   }
   p{
-      padding: 20px;
+      padding: 10px;
   }
 
   /* Use a media query to add a break point at 800px: */

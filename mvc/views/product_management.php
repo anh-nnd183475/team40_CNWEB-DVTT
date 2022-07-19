@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Product Management | MTHH</title>
+        <title>SẢN PHẨM</title>
+        <link rel="shortcut icon" type="image/png" href="images/logoicon.png" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="public/css/admin/product_management.css">
         <script src="public/javascript/admin/product_management.js"></script>
@@ -12,46 +13,46 @@
     <body>
         <div>
             <div style="float: left; width: 20%; height: 150px;">
-                <center><img src="images/admin/admin.jpg" alt="" width="50%" height="100%"></center>
+                <img src="images/logo_team.png" alt="" width="50%">
             </div>
             <div style="width: 80%; height: 150px;">
-                <center><h1 style="color: rgb(50, 158, 98); padding: 20px;">PRODUCT  MANAGEMENT</h1></center>
+                <center><h1 style="color: rgb(50, 158, 98); padding: 20px;">QUẢN LÝ SẢN PHẨM</h1></center>
             </div>
         </div>
         <div id="main" style="display: flex;">
-            <div style="background-color: rgb(212, 188, 109);" class="main">
+            <div style="background-color: #602D8D;" class="main">
                 <center>
                 <img src="images/admin/laptop.jpg" alt="" class="img-icon">
                 <h1 style="color: white">LAPTOP</h1>
                 <div>
-                    <button class="btn-icon" onclick="sc_laptop()">Add Laptop</button>
+                    <button class="btn-icon" onclick="sc_laptop()">Thêm Laptop</button>
                 </div>
                 <div>
-                    <button class="btn-icon" onclick="ql_laptop()">Laptop Management</button>
+                    <button class="btn-icon" onclick="ql_laptop()">Quản lý Laptop</button>
                 </div>
                 </center>
             </div>
-            <div style="background-color: rgb(94, 117, 139);" class="main">
+            <div style="background-color: #602D8D;" class="main">
                 <center>
                 <img src="images/admin/pc.jpg" alt="" class="img-icon">
                 <h1 style="color: white">PC</h1>
                 <div>
-                    <button class="btn-icon" onclick="sc_pc()">Add PC</button>
+                    <button class="btn-icon" onclick="sc_pc()">Thêm PC</button>
                 </div>
                 <div>
-                    <button class="btn-icon"  onclick="ql_pc()">PC Management</button>
+                    <button class="btn-icon"  onclick="ql_pc()">Quản lý PC</button>
                 </div>
                 </center>
             </div>
-            <div style="background-color: rgb(121, 165, 92);" class="main">
+            <div style="background-color: #602D8D;" class="main">
                 <center>
                 <img src="images/admin/mouse.jpg" alt="" class="img-icon">
-                <h1 style="color: white">MOUSE</h1>
+                <h1 style="color: white">GEARS</h1>
                 <div>
-                    <button class="btn-icon" onclick="sc_mouse()">Add Computer Mouse</button>
+                    <button class="btn-icon" onclick="sc_mouse()">Thêm Phụ kiện</button>
                 </div>
                 <div>
-                    <button class="btn-icon" onclick="ql_mouse()">Computer Mouse Management</button>
+                    <button class="btn-icon" onclick="ql_mouse()">Quản lý phụ kiện</button>
                 </div>
                 </center>
             </div>
@@ -60,10 +61,10 @@
         <div id='add_laptop' style=" display: none;">
             <div style="display: flex; background-color: rgb(97, 182, 133); border-top-left-radius: 20px; border-top-right-radius: 20px;">
                 <div style="width: 10%;">
-                    <center><button class="btn-back" onclick="back_main()">&lt&lt&lt</button></center>
+                    <center><button class="btn-back" onclick="back_main()">Back</button></center>
                 </div>
                 <div  style="width: 80%;">
-                    <center><h2 style="color:white;">ADD LAPTOP</h2></center>
+                    <center><h2 style="color:white;">THÊM LAPTOP</h2></center>
                 </div>
             </div>
             <div >
@@ -71,27 +72,27 @@
                     <div class="form" id="form">
                         <form action="">
                             <div style="float: left; width: 50%;">
-                                <p class="form-left p-add">ProductID</p>
+                                <p class="form-left p-add">ID sản phẩm</p>
                                 <input class="form-left" type="number" id="lt-id">
-                                <p class="form-left p-add">Model</p>
+                                <p class="form-left p-add">Mẫu Laptop</p>
                                 <input class="form-left" type="text" id="lt-model">
-                                <p class="form-left p-add" >Price</p>
+                                <p class="form-left p-add" >Giá</p>
                                 <input class="form-left" type="number" id="lt-price">
-                                <p class="form-left">Weight</p>
+                                <p class="form-left">Cân nặng</p>
                                 <input class="form-left" type="number" id="lt-w">
-                                <p class="form-left" >Color</p>
+                                <p class="form-left" >Màu sắc</p>
                                 <input class="form-left" type="text" id="lt-color">
-                                <p class="form-left">Number Of Product</p>
+                                <p class="form-left">Số lượng</p>
                                 <input class="form-left" type="number" id="lt-num">
-                                <p class="form-left">Supplier</p>
+                                <p class="form-left">Hãng cung cấp</p>
                                 <input class="form-left" type="text" id="lt-sup">
-                                <p class="form-left">MainConnection</p>
+                                <p class="form-left">Cổng giao tiếp chính</p>
                                 <input class="form-left" type="text" id="lt-mainC">
-                                <p class="form-left">OS</p>
+                                <p class="form-left">Hệ điều hành</p>
                                 <input class="form-left" type="text" id="lt-os">
-                                <p class="form-left">Battery</p>
+                                <p class="form-left">PIN</p>
                                 <input class="form-left" type="number" id="lt-bat">
-                                <p class="form-left">Screen</p>
+                                <p class="form-left">Màn Hình</p>
                                 <input class="form-left" type="text" id="lt-sc">
                             </div>
                             <div style="float: left; width: 50%;">
@@ -99,18 +100,18 @@
                                 <input class="form-left" type="text" id="lt-cpu">
                                 <p class="form-left">RAM</p>
                                 <input class="form-left" type="text" id="lt-ram">
-                                <p class="form-left">Storage</p>
+                                <p class="form-left">Bộ nhớ trong</p>
                                 <input class="form-left" type="number" id="lt-storage">
-                                <p class="form-left">Card</p>
+                                <p class="form-left">GPU</p>
                                 <input class="form-left" type="text" id="lt-card">
-                                <p class="form-left">Image</p>
+                                <p class="form-left">Ảnh sản phẩm</p>
                                 <input style="margin-left: 20px;" type="file" id="lt-img">
-                                <p class="form-left">Depscription</p>
+                                <p class="form-left">Mô tả thêm</p>
                                 <textarea cols="70" rows="20" id="lt-dep"></textarea>
                             </div>
                             <!--center><input type="submit" class="submit" value="ADD" onclick="lt_add()"></center>-->
                         </form>
-                        <center><button  class="submit" onclick="add_laptop('lt-img')" style="width: 70%;">ADD</button></center>
+                        <center><button  class="submit" onclick="add_laptop('lt-img')" style="width: 70%;">THÊM</button></center>
                     </div>
                 </div>
             </div>
@@ -119,10 +120,10 @@
         <div id='add_pc' style=" display: none;">
             <div style="display: flex; background-color: rgb(97, 182, 133); border-top-left-radius: 20px; border-top-right-radius: 20px;">
                 <div style="width: 10%;">
-                    <center><button class="btn-back" onclick="back_main()">&lt&lt&lt</button></center>
+                    <center><button class="btn-back" onclick="back_main()">BACK</button></center>
                 </div>
                 <div  style="width: 80%;">
-                    <center><h2 style="color:white;">ADD PC</h2></center>
+                    <center><h2 style="color:white;">THÊM PC</h2></center>
                 </div>
             </div>
             <div >
@@ -130,27 +131,27 @@
                     <div>
                         <form action="">
                             <div style="float: left; width: 50%;">
-                                <p class="form-left">ProductID</p>
+                                <p class="form-left">Mã sản phẩm</p>
                                 <input class="form-left" type="number" id="pc-id">
-                                <p class="form-left">Model</p>
+                                <p class="form-left">Tên sản phẩm</p>
                                 <input class="form-left" type="text" id="pc-model">
-                                <p class="form-left" >Price</p>
+                                <p class="form-left" >Giá</p>
                                 <input class="form-left" type="number" id="pc-price">
-                                <p class="form-left">Weight</p>
+                                <p class="form-left">Cân nặng</p>
                                 <input class="form-left" type="number" id="pc-w">
-                                <p class="form-left" >Color</p>
+                                <p class="form-left" >Màu sắc</p>
                                 <input class="form-left" type="text" id="pc-color">
-                                <p class="form-left">Number Of Product</p>
+                                <p class="form-left">Số lượng</p>
                                 <input class="form-left" type="number" id="pc-num">
-                                <p class="form-left">Supplier</p>
+                                <p class="form-left">Nhà cung cấp</p>
                                 <input class="form-left" type="text" id="pc-sup">
-                                <p class="form-left">MainConnection</p>
+                                <p class="form-left">Cổng giao tiếp chính</p>
                                 <input class="form-left" type="text" id="pc-mainC">
-                                <p class="form-left">OS</p>
+                                <p class="form-left">Hệ điều hành</p>
                                 <input class="form-left" type="text" id="pc-os">
                                 <p class="form-left">Case</p>
                                 <input class="form-left" type="text" id="pc-case">
-                                <p class="form-left">Screen</p>
+                                <p class="form-left">Màn hình</p>
                                 <input class="form-left" type="text" id="pc-sc">
                             </div>
                             <div style="float: left; width: 50%;">
@@ -158,17 +159,17 @@
                                 <input class="form-left" type="text" id="pc-cpu">
                                 <p class="form-left">RAM</p>
                                 <input class="form-left" type="text" id="pc-ram">
-                                <p class="form-left">Storage</p>
+                                <p class="form-left">Bộ nhớ trong</p>
                                 <input class="form-left" type="number" id="pc-storage">
-                                <p class="form-left">Card</p>
+                                <p class="form-left">GPU</p>
                                 <input class="form-left" type="text" id="pc-card">
-                                <p class="form-left">Image</p>
+                                <p class="form-left">Ảnh sản phẩm</p>
                                 <input style="margin-left: 20px;" type="file" id="pc-img">
-                                <p class="form-left">Depscription</p>
+                                <p class="form-left">Mô tả</p>
                                 <textarea id="pc-dep" cols="70" rows="20"></textarea>
                             </div>
                         </form>
-                        <center><button  class="submit" onclick="add_pc('pc-img')" style="width: 70%;">ADD</button></center>
+                        <center><button  class="submit" onclick="add_pc('pc-img')" style="width: 70%;">THÊM</button></center>
                     </div>
                 </div>
             </div>
@@ -177,10 +178,10 @@
         <div id='add_mouse' style=" display: none;">
             <div style="display: flex; background-color: rgb(97, 182, 133); border-top-left-radius: 20px; border-top-right-radius: 20px;">
                 <div style="width: 10%;">
-                    <center><button class="btn-back" onclick="back_main()">&lt&lt&lt</button></center>
+                    <center><button class="btn-back" onclick="back_main()">BACK</button></center>
                 </div>
                 <div  style="width: 80%;">
-                    <center><h2 style="color:white;">ADD MOUSE</h2></center>
+                    <center><h2 style="color:white;">ADD GEAR</h2></center>
                 </div>
             </div>
             <div>
@@ -188,37 +189,37 @@
                     <div>
                         <form action="">
                             <div style="float: left; width: 50%;">
-                                <p class="form-left">ProductID</p>
+                                <p class="form-left">ID sản phẩm</p>
                                 <input class="form-left" type="number" id="m-id">
-                                <p class="form-left">Model</p>
+                                <p class="form-left">Mẫu sản phẩm</p>
                                 <input class="form-left" type="text" id="m-model">
-                                <p class="form-left" >Price</p>
+                                <p class="form-left" >Giá</p>
                                 <input class="form-left" type="number" id="m-price">
-                                <p class="form-left">Weight</p>
+                                <p class="form-left">Cân nặng</p>
                                 <input class="form-left" type="number" id="m-w">
-                                <p class="form-left" >Color</p>
+                                <p class="form-left" >Màu sắc</p>
                                 <input class="form-left" type="text" id="m-color">
-                                <p class="form-left">Number Of Product</p>
+                                <p class="form-left">Số lượng</p>
                                 <input class="form-left" type="number" id="m-num">
-                                <p class="form-left">Supplier</p>
+                                <p class="form-left">Hãng cung cấp</p>
                                 <input class="form-left" type="text" id="m-sup">
-                                <p class="form-left">StandardConnection</p>
+                                <p class="form-left">Chuẩn kết nối</p>
                                 <input class="form-left" type="number" id="m-sc">
                             </div>
                             <div style="float: left; width: 50%;">
-                                <p class="form-left">ConnectionProtocal</p>
+                                <p class="form-left">Cổng giao tiếp</p>
                                 <input class="form-left" type="text" id="m-cp">
-                                <p class="form-left">IsLed</p>
+                                <p class="form-left">Có led</p>
                                 <input class="form-left" type="number" id="m-isLed">
                                 <p class="form-left">Size</p>
                                 <input class="form-left" type="text" id="m-size">
-                                <p class="form-left">Image</p>
+                                <p class="form-left">Ảnh sản phẩm</p>
                                 <input style="margin-left: 20px;" type="file" id="m-img">
-                                <p class="form-left">Depscription</p>
+                                <p class="form-left">Mô tả thêm:</p>
                                 <textarea id="m-dep" cols="70" rows="20"></textarea>
                             </div>
                         </form>
-                        <center><button  class="submit" onclick="add_mouse('m-img')" style="width: 70%;">ADD</button></center>
+                        <center><button  class="submit" onclick="add_mouse('m-img')" style="width: 70%;">THÊM</button></center>
                     </div>
                 </div>
             </div>
@@ -227,7 +228,7 @@
         <div id='ql_sp' style=" display: none;">
             <div style="display: flex; background-color: rgb(97, 182, 133); border-top-left-radius: 20px; border-top-right-radius: 20px;">
                 <div style="width: 10%;">
-                    <center><button class="btn-back" onclick="back_main()">&lt&lt&lt</button></center>
+                    <center><button class="btn-back" onclick="back_main()">BACK</button></center>
                 </div>
                 <div  style="width: 80%;">
                     <center><h2 style="color:white;" id="ql_sp_text"></h2></center>
@@ -237,15 +238,15 @@
                 <form action="">
                     <input type="text" id="type-search" style="display: none;">
                     <div style="float: left; width: 25%;">
-                        <p class="form-left">ProductID</p>
+                        <p class="form-left">ID</p>
                         <input class="form-left" type="text" id="id-search">
                     </div>
                     <div style="float: left; width: 25%;">
-                        <p class="form-left">Model</p>
+                        <p class="form-left">Mẫu sản phẩm</p>
                         <input class="form-left" type="text" id="model-search">
                     </div>
                     <div style="float: left; width: 25%;">
-                        <p class="form-left">Supplier</p>
+                        <p class="form-left">Hãng</p>
                         <select style="width:70%;" class="form-left" id="sup-search">
                             <option></option>
                             <option>Dell</option>
@@ -254,6 +255,7 @@
                             <option>Asus</option>
                             <option>MSI</option>
                             <option>Acer</option>
+                            <option>MSI</option>
                         </select>
                     </div>
                     <div style="float: left; width: 10%;">
@@ -279,7 +281,7 @@
     <div id='ct_sp' style=" display: none;">
         <div style="display: flex; background-color: rgb(97, 182, 133); border-top-left-radius: 20px; border-top-right-radius: 20px;">
             <div style="width: 10%;">
-                <center><button class="btn-back" onclick="back_qlsp()">&lt&lt&lt</button></center>
+                <center><button class="btn-back" onclick="back_qlsp()">BACK</button></center>
             </div>
             <div  style="width: 80%;">
                 <center><h2 style="color:white;">PRODUCT DETAILS </h2></center>
@@ -706,7 +708,7 @@
     var type=document.getElementById('type-search');
     var text=document.getElementById('ql_sp_text');
     type.value='1';
-    text.innerHTML="LAPTOP MANAGEMENT";
+    text.innerHTML="LAPTOP";
     div_main.style.display='none';
     ql_sp.style.display='inherit';
     get_data_search();
@@ -718,7 +720,7 @@
     var type=document.getElementById('type-search');
     var text=document.getElementById('ql_sp_text');
     type.value='2';
-    text.innerHTML="PC MANAGEMENT";
+    text.innerHTML="PC";
     div_main.style.display='none';
     ql_sp.style.display='inherit';
     get_data_search();
@@ -730,7 +732,7 @@
     var type=document.getElementById('type-search');
     var text=document.getElementById('ql_sp_text');
     type.value='3';
-    text.innerHTML="COMPUTER MOUSE MANAGEMENT";
+    text.innerHTML="Gears";
     div_main.style.display='none';
     ql_sp.style.display='inherit';
     get_data_search();

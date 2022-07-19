@@ -14,6 +14,14 @@ $listTmpBill = $service->getAllListProductsBill();
 $user = "";
 $phone= "";
 $name = "";
+ 
+if (!function_exists('currency_format')) {
+    function currency_format($number, $suffix = 'đ') {
+        if (!empty($number)) {
+            return number_format($number, 0, ',', '.') . "{$suffix}";
+        }
+    }
+}
 
 if(array_key_exists("user", $_POST)){
   $user = strtolower($_POST['user']);
@@ -51,7 +59,8 @@ foreach ($listTmpBill as $tmpBill) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account Management | MTHH</title>
+    <title>KHÁCH & ĐƠN HÀNG</title>
+    <link rel="shortcut icon" type="image/png" href="images/logoicon.png" />
     <style>
         p {
         color:rgb(35, 102, 226); font-size: 25px; margin-bottom:0px;
@@ -83,7 +92,7 @@ foreach ($listTmpBill as $tmpBill) {
 
     </head>
     <body>
-        <div style="color:rgb(35, 102, 226);"><center><h1>ACCOUNT MANAGEMENT</h1></center></div>
+        <div style="color:rgb(35, 102, 226);"><center><h1>KHÁCH HÀNG & ĐƠN HÀNG</h1></center></div>
         <hr>
         <form action="" method="post">
             <div>
@@ -93,11 +102,11 @@ foreach ($listTmpBill as $tmpBill) {
                 </div>
 
                 <div style="width:28%; float:left; height: 70px;">
-                    <p>Name</p>
+                    <p>Tên</p>
                     <input class="input1" type="text" name="name">
                 </div>
                 <div style="width:28%; float:left; height: 70px;">
-                    <p>Phone</p>
+                    <p>Số điện thoại</p>
                     <input class="input1" type="text" name="phone">
                 </div>
                 <div style="width:16%; float:left; height: 70px;">
@@ -115,10 +124,10 @@ foreach ($listTmpBill as $tmpBill) {
         <br><br>
         <table border="1" style="width:100%;">
             <tr>
-                <th >UserName</th>
+                <th >User name</th>
                 <th >Full Name</th>
-                <th >Phone</th>
-                <th >Address</th>
+                <th >Điện thoại</th>
+                <th >Địa chỉ</th>
             </tr>
             <?php
             foreach($users as $u){
@@ -155,10 +164,12 @@ foreach ($listTmpBill as $tmpBill) {
 
             }
         ?>
-        <br /><br /><br /><br />
-        <h2>Sản phẩm đặt hàng</h2><h2>Tổng số tiền đã bán thành công : <?php echo $sum_success ?></h2><h2>Tổng số sản phẩm đã bán thành công : <?php echo $cnt ?></h2>
+        <br /><br />
+        <h1>THỐNG KÊ ĐƠN HÀNG:</h1>
+        <h1>Tổng số tiền đã bán thành công : <?php echo currency_format($sum_success) ?></h1>
+        <h1>Tổng số sản phẩm đã bán thành công : <?php echo $cnt ?></h1>
         <div class="products-container" b>
-          <table border="1" style="width:100%;">
+          <table border="1" style="width:100%;text-align: center">
               <tr>
                   <td>Sản phẩm</td>
                   <td>Khách hàng</td>
@@ -196,7 +207,12 @@ foreach ($listTmpBill as $tmpBill) {
                     if($bill->getStatus() == 0) echo "Đang đặt hàng";
                     else echo "Thành công";
                     ?></p></td>
-                    <td style="text-align : center"><input type="submit" value="Hoàn thành"></td>
+                    <td style="text-align : center"><?php
+                    if($bill->getStatus() != 0) echo "Đã xong";
+                    else { ?>
+                       <input type="submit" value="Hoàn thành">
+                      <?php } ?>
+                  </td>
                 </form>
             </tr>
         <?php } ?>

@@ -68,10 +68,11 @@ html {
 } */
 
 .account_container h1 {
+  margin-left: 20px;
   font-size: 30px;
   font-weight: 500;
-  font-family: 'Roboto';
-  color: gray;
+  font-family: 'Monda';
+  color:#602D8D;
 }
 .left_side_bar h1 {
   margin-top: 20px;
@@ -107,7 +108,7 @@ html {
   text-align: center;
 }
 .left_side_bar ul li a i{
-    background: linear-gradient(to right, #ff105f, #ffad06);
+    background: linear-gradient(to right,  #286DA8, #06ff4b);
 }
 .left_side_bar ul li a i:hover {
   background: linear-gradient(to right, #7fa2d1, #06ff4b);
@@ -168,9 +169,7 @@ html {
   margin: 20px 10px;
 
 }
-.birthday {
 
-}
 .extra-content {
  width: 30%;
  border-left: 1px solid #ebe3e3;
@@ -321,10 +320,9 @@ html {
   margin-top: 0px;
 }
 #quantity {
-  font-size: 40px;
-  color: #22cd22;
-  font-family: 'Roboto';
-  font-style: italic;
+  font-size: 30px;
+  color: red;
+  font-family: 'Monda', sans-serif;
 }
 .account_container .col-3 {
   margin-top: 50px;
@@ -531,14 +529,15 @@ span {
 }
 button {
   border-radius: 50px;
-  width: 80px;
+  width: fit-content;
   height: 30px;
-  background: linear-gradient(to right, #ff105f, #ffad06);
+  background: linear-gradient(to right,#286DA8, #06ff4b);
   color: white;
   border: none;
   outline: none;
   cursor: pointer;
-  margin: 10px 0px;
+  margin: 10px 5px;
+  padding: 2px 10px;
 }
 button:hover {
   background: linear-gradient(to right, #7fa2d1, #06ff4b);
@@ -547,8 +546,8 @@ button:hover {
   margin: 10px;
 }
 .input span {
-  color: #e1d9d9e7e7;
-  background: #60d6e20;
+  color: #C0C0C0;
+  background: #60d6e2;
 }
 
 

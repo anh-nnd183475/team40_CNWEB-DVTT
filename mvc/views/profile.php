@@ -21,28 +21,31 @@ $person = $service->get($username);
 		<link rel="stylesheet" href="public/css/footer_container.css" type="text/css">
 		<link rel="stylesheet" href="public/css/nav_bar.css">
                 <script src="public/javascript/show_by_status.js"></script>
-		<title>Profile | MTHH</title>
+		<title>PROFILE</title>
+		<link rel="shortcut icon" type="image/png" href="images/logoicon.png" />
 	</head>
 	<!-- includes nav bar -->
 	<?php require_once ROOT . DS . 'mvc' . DS . 'views' . DS . 'nav_bar.php'; ?>
 	<section>
 		<div class="account_container">
 			<div class="left_side_bar">
-				<h1>My account</h1>
+				<h1>TÀI KHOẢN</h1>
 				<ul>
 					<li><a href="#profile"><i class="fa fa-user" aria-hidden="true"></i>Quản lý tài khoản</a></li>
-					<li><a href="#order"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Lịch sử</a></li>
+					<li><a href="#order"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Lịch sử đơn hàng</a></li>
 					<!-- <li><a href="#address"><i class="fa fa-truck" aria-hidden="true"></i>Địa chỉ giao hàng</a></li> -->
 					<li><a href="#payment"><i class="fa fa-credit-card" aria-hidden="true"></i>Phương thức thanh toán</a></li>
 					<li><a href="#pwd"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Quản lý mật khẩu</a></li>
+					<li><hr></li>
+					<li><a href="library/refresh_session.php"><button type="submit" style="font-size: 20px; padding: 3px 10px">Đăng xuất</button></a></li>
 				</ul>
 			</div>
 			<div class="main_content">
 				<div class="user" id ="profile">
 					<div class="row">
 						<div class="user-title">
-							<h1>Thông tin cá nhân</h1>
-							<p>Giữ cho tài khoản của bạn được an toàn hơn</p>
+							<h1 class= "h1title">Thông tin cá nhân</h1>
+							<p style= "margin-left: 10px">Bạn có thể chỉnh sửa thông tin ở dưới đây</p>
 							<hr>
 						</div>
 						<div class="user-content">
@@ -79,12 +82,6 @@ $person = $service->get($username);
 								</form>
 							</div>
 						</div>
-						<div class="extra-content">
-							<img src="https://i0.wp.com/s1.uphinh.org/2021/04/25/Untitled-Design-3.png" alt=""><br>
-							<!-- <button>Choose image</button> -->
-							<br>
-							<!-- <p>File size <= 10MB, style: PNG, JPG,...</p> -->
-						</div>
 					</div>
 				</div>
 				<div class="order_content" id="order">
@@ -93,8 +90,8 @@ $person = $service->get($username);
 							<ul>
                                                                 <li><button onclick='show_all()'>Tất cả</button></li>
                                                                 <li><button onclick="show_by_status('stt0')">Đang xác nhận</button></li>
-                                                                <li><button onclick="show_by_status('stt1')">Đang giao hàng</button></li>
-                                                                <li><button onclick="show_by_status('stt2')">Đã giao hàng</button></li> 
+                                                                <li><button onclick="show_by_status('stt1')">Đang giao</button></li>
+                                                                <li><button onclick="show_by_status('stt2')">Đã giao</button></li> 
                                                                 <li><button onclick="show_by_status('stt3')">Đã hủy</button></li> 
                                                                 <li><button onclick="show_by_status('stt4')">Trả hàng</button></li>
                                                                 <!--<li><a href="">Tất cả</a></li>
@@ -221,7 +218,7 @@ $person = $service->get($username);
 									<p id = 'deal'><?php echo $bill->getDateBill() ?></p>
                                                                         <p id = 'status'><?php echo "Trả hàng";?></p>
 									<p><?php echo $product->getModel() ?></p>
-									<p id = 'quantity'>x<?php echo $bill->getQuantity() ?></p>
+									<p id = 'quantity'>X<?php echo $bill->getQuantity() ?></p>
 								</div>
 								<div class="col-3">
 									<p><!--<del>1293$</del>--><?php echo intval($product->getPrice())*intval($bill->getQuantity()) ?></p>
@@ -247,11 +244,11 @@ $person = $service->get($username);
 					<div class="payment_content" id='payment'>
 						<div class="row">
 							<div class="cards">
-								<h1>Phương thức thanh toán</h1>
+								<h1 style= "margin-left: 10px">Phương thức thanh toán</h1>
 								<p id = 'add'><i class="fa fa-plus" aria-hidden="true"></i>Thay đổi phương thức thanh toán</p>
 								<hr>
 								<div class="content">
-									<h2>Hiện cửa hàng chỉ cung cấp thanh toán bằng tiền mặt khi nhận hàng</h2>
+									<h2 style= "margin-left: 10px">Hiện cửa hàng chỉ cung cấp thanh toán bằng tiền mặt khi nhận hàng</h2>
 								</div>
 							</div>
 						</div>
@@ -261,7 +258,7 @@ $person = $service->get($username);
 						<div class="row">
 							<div class="pwd_title">
 								<h1>Bảo mật</h1>
-								<p>Thay đổi mật khẩu 6 tháng 1 lần để bảo vệ tài khoản của bạn</p>
+								<p style= "margin-left: 10px">Hãy thay đổi mật khẩu định kỳ để bảo mật cho tài khoản của bạn</p>
 								<hr>
 							</div>
 							<div class="label">
@@ -282,7 +279,6 @@ $person = $service->get($username);
 							</form>
 						</div>
 					</div>
-					<a href="library/refresh_session.php"><button type="submit">Đăng xuất</button></a>
 				</div>
 				<!-- <div class="right_side_bar">
 						<a onclick="topFunction()" id="myBtn" title="Go to top">Top</a>

@@ -34,6 +34,14 @@ ul {
 	flex-wrap: wrap;
 
 }
+.tit_container{
+	text-align: center;
+	margin-top: 10px;
+}
+.tit_container .title{
+	color: #602D8D;
+	font-size: 35px;
+}
 .cart .btn {
   background: orange;
   color: white;
@@ -43,7 +51,7 @@ ul {
   display: inline-block;
   margin: 20px 0px 20px 10px; 
   text-decoration: none;
-  background: linear-gradient(to right, #ff105f, #ffad06);
+  background: linear-gradient(to right, #602D8D, red);
 
 }
 .cart .btn:hover {
@@ -51,9 +59,10 @@ ul {
 }
 .cart th {
 	text-align: left;
+	font-size: larger;
 	padding: 5px;
-	color: white;
-	background-color: #ff523b;
+	color: #602D8D;
+	background-color: #F0FFFF;
 	font-weight: normal;
 	border: 1px solid
 }

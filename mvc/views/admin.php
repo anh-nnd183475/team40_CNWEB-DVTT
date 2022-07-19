@@ -18,19 +18,22 @@ if(!isset($_SESSION['admin_username'])){
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ADMIN</title>
+        <link rel="shortcut icon" type="image/png" href="images/logoicon.png" />
         <link rel="stylesheet" href="public/css/admin/admin.css">
     </head>
     <body>
         <div class="logout">
-          <a href="library/refresh_session.php">Đăng xuất</a>
+          <a href="library/refresh_session.php" class="logout-btn">Đăng xuất</a>
         </div>
-        <center><img src="public/images/admin/admin.jpg" alt="" width="50%"></center>
         <a href="account-management"><div class="left">
-            <p>Account Management</p>
+            <p>QUẢN LÝ KHÁCH HÀNG</p>
         </div></a>
         <a href="product-management"><div class="right">
-            <p>Product Management</p>
+            <p>QUẢN LÝ SẢN PHẨM</p>
         </div>
       </a>
+      <div >
+        <img src="public/images/admin/banner2.jpg" class="banner" alt="" width="80%">
+        </div>
 </body>
 </html>
