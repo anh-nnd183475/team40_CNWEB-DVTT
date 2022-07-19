@@ -20,7 +20,7 @@ $person = $service->get($username);
 		<link rel="stylesheet" href="public/css/profile.css">
 		<link rel="stylesheet" href="public/css/footer_container.css" type="text/css">
 		<link rel="stylesheet" href="public/css/nav_bar.css">
-                <script src="public/javascript/show_by_status.js"></script>
+                <script src="public/javascript/profile.js"></script>
 		<title>Profile | MTHH</title>
 	</head>
 	<!-- includes nav bar -->
@@ -267,7 +267,7 @@ $person = $service->get($username);
 							<div class="label">
 								<label for="new_pwd">Mật khẩu hiện tại</label>
 								<label for="new_pwd_verify">Mật khẩu mới</label>
-								<label for="validation">Xác nhận mật khẩu mới</label>
+								<label for="validation">Nhập lại mật khẩu mới</label>
 							</div>
 							<form action="library/refresh_password.php" method="POST">
 								<div class="input">
@@ -279,13 +279,19 @@ $person = $service->get($username);
 									<br>
 									<button type="submit">Xác nhận</button>
 								</div>
+                                                                <span style="padding-left: 5px; padding-bottom: 5px; color: red; text-align: left;background-color: inherit">
+                                                                    <?php
+                                                                    if(isset($_SESSION["perror"])){
+                                                                        echo "*".$_SESSION["perror"];
+                                                                        unset($_SESSION['perror']);
+                                                                    }
+                                                                    ?>
+                                                                </span>
 							</form>
 						</div>
 					</div>
 					<a href="library/refresh_session.php"><button type="submit">Đăng xuất</button></a>
 				</div>
-				<!-- <div class="right_side_bar">
-						<a onclick="topFunction()" id="myBtn" title="Go to top">Top</a>
-				</div> -->
+				
 			</div>
 		</section>
