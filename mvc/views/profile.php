@@ -20,7 +20,7 @@ $person = $service->get($username);
 		<link rel="stylesheet" href="public/css/profile.css">
 		<link rel="stylesheet" href="public/css/footer_container.css" type="text/css">
 		<link rel="stylesheet" href="public/css/nav_bar.css">
-                <script src="public/javascript/show_by_status.js"></script>
+                <script src="public/javascript/profile.js"></script>
 		<title>PROFILE</title>
 		<link rel="shortcut icon" type="image/png" href="images/logoicon.png" />
 	</head>
@@ -71,12 +71,7 @@ $person = $service->get($username);
 										<p><input type="text" name="address" class="phone" value="<?php echo $person->getAddress(); ?>">
 										<!-- <a href="">Change</a></p> -->
 									</div>
-									<!-- <div class="radio">
-											<p>Nam</p><input type="radio" id="male" name="gender" value="male">
-											<p>Nu</p><input type="radio" id="female" name="gender" value="female">
-											<p>BD</p><input type="radio" id="other" name="gender" value="other">
-									</div> -->
-									<!-- <input type="date" id="birthday" name="birthday"> -->
+									
 									<br />
 									<button type="submit">Save</button>
 								</form>
@@ -94,12 +89,7 @@ $person = $service->get($username);
                                                                 <li><button onclick="show_by_status('stt2')">Đã giao</button></li> 
                                                                 <li><button onclick="show_by_status('stt3')">Đã hủy</button></li> 
                                                                 <li><button onclick="show_by_status('stt4')">Trả hàng</button></li>
-                                                                <!--<li><a href="">Tất cả</a></li>
-								<li><a href="">Đang xác nhận</a></li>
-								<li><a href="">Đang giao hàng</a></li>
-								<li><a href="">Đã giao hàng</a></li>
-								<li><a href="">Đã hủy</a></li>
-                                                                <li><a href="">Trả hàng</a></li>-->                                                                
+                                                                                                                              
 							</ul>
 						</div>
 						<div class="search">
@@ -288,8 +278,6 @@ $person = $service->get($username);
 						</div>
 					</div>
 				</div>
-				<!-- <div class="right_side_bar">
-						<a onclick="topFunction()" id="myBtn" title="Go to top">Top</a>
-				</div> -->
+				
 			</div>
 		</section>

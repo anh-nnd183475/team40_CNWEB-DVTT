@@ -13,13 +13,7 @@ class GuestServices extends MySqlConnect {
      * @param Guest $guest
      */
     public function insert($guest) {
-        // add to guest table
-        // $query = "insert into guest(user_name, your_password, your_name)
-        //             value (" .
-        //             "'" . $guest->getUsername() . "' ," .
-        //             "'" . $guest->getPassword() . "' ," .
-        //             "'" . $guest->getName() . "'"
-        //                 . ")";
+        
         $username = $guest->getUsername();
         $password = $guest->getPassword();
         $name = $guest->getName();
@@ -128,14 +122,6 @@ class GuestServices extends MySqlConnect {
      * @param Guest $guest
      */
     public function update($guest) {
-        // update to products table
-        // $query = "update guest
-        //             set " .
-        //             "your_password = " . "'" . $guest->getPassword() . "' ," .
-        //             "your_name = " . "'" . $guest->getPassword() . "'" .
-        //             "where user_name = '" . $guest->getUsername() . "'"
-        //             . "";
-
         $username = $guest->getUsername();
         $password = $guest->getPassword();
         $name = $guest->getName();
@@ -382,11 +368,3 @@ class GuestServices extends MySqlConnect {
         parent::updateQuery();
     }
 }
-
-// require_once ROOT . DS . 'services' . DS . 'products' . DS . 'PCServices.php';
-// require_once ROOT . DS . 'mvc' . DS . 'models' . DS . 'products' . DS . 'PC.php';
-//
-// $service = new PCServices();
-// $pc = $service->get(30001); echo $pc->getProductID();
-// $service = new GuestServices();
-// $service->insertProduct("huy0628", $pc, 5);

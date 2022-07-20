@@ -90,12 +90,7 @@
                                     <img src=<?php echo "\"" . $laptop->getImage() . "\"" ?> >
 									<span class="product-trend-label">Chi tiết</span>
 									<span class="product-discount-label">20%</span>
-									<!--<ul class="social">
-										<li><a href="<?php?>" data-toggle="tooltip" data-placement="top" title="Add to cart"><i class = "fa fa-shopping-cart" onclick="cart_change()"></i></a></li>
-										<li><a href="#" data-toggle="tooltip" data-placement="top" title="Wish List"><i class = "fa fa-heart"></i></a></li>
-										<li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class = "fa fa-random"></i></a></li>
-										<li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class = "fa fa-search"></i></a></li>
-									</ul>-->
+									
                                                                 </div>
                                                     </a>
                                                     <div class="product-content">
@@ -128,12 +123,7 @@
 									<img src=<?php echo "\"" . $pc->getImage() . "\"" ?> >
 									<span class="product-trend-label">Chi tiết</span>
 									<span class="product-discount-label">20%</span>
-									<!--<ul class="social">
-										<li><a href="<?php?>" data-toggle="tooltip" data-placement="top" title="Add to cart"><i class = "fa fa-shopping-cart" onclick="cart_change()"></i></a></li>
-										<li><a href="#" data-toggle="tooltip" data-placement="top" title="Wish List"><i class = "fa fa-heart"></i></a></li>
-										<li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class = "fa fa-random"></i></a></li>
-										<li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class = "fa fa-search"></i></a></li>
-									</ul>-->
+									
 								</div>
 							</a>
 							<div class="product-content">
@@ -167,12 +157,7 @@
 										<img src=<?php echo "\"" . $mouse->getImage() . "\"" ?> >
 										<span class="product-trend-label">Chi tiết</span>
 										<span class="product-discount-label">20%</span>
-										<!--<ul class="social">
-											<li><a href="<?php;?>" data-toggle="tooltip" data-placement="top" title="Add to cart"><i class = "fa fa-shopping-cart" onclick="cart_change()"></i></a></li>
-											<li><a href="#" data-toggle="tooltip" data-placement="top" title="Wish List"><i class = "fa fa-heart"></i></a></li>
-											<li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class = "fa fa-random"></i></a></li>
-											<li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class = "fa fa-search"></i></a></li>
-										</ul>-->
+										
 									</div>
 								</a>
 								<div class="product-content">
