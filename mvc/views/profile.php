@@ -258,13 +258,13 @@ $person = $service->get($username);
 						<div class="row">
 							<div class="pwd_title">
 								<h1>Bảo mật</h1>
-								<p style= "margin-left: 10px">Hãy thay đổi mật khẩu định kỳ để bảo mật cho tài khoản của bạn</p>
+								<p>Thay đổi mật khẩu 6 tháng 1 lần để bảo vệ tài khoản của bạn</p>
 								<hr>
 							</div>
 							<div class="label">
 								<label for="new_pwd">Mật khẩu hiện tại</label>
 								<label for="new_pwd_verify">Mật khẩu mới</label>
-								<label for="validation">Xác nhận mật khẩu mới</label>
+								<label for="validation">Nhập lại mật khẩu mới</label>
 							</div>
 							<form action="library/refresh_password.php" method="POST">
 								<div class="input">
@@ -276,6 +276,14 @@ $person = $service->get($username);
 									<br>
 									<button type="submit">Xác nhận</button>
 								</div>
+                                                                <span style="padding-left: 5px; padding-bottom: 5px; color: red; text-align: left;background-color: inherit">
+                                                                    <?php
+                                                                    if(isset($_SESSION["perror"])){
+                                                                        echo "*".$_SESSION["perror"];
+                                                                        unset($_SESSION['perror']);
+                                                                    }
+                                                                    ?>
+                                                                </span>
 							</form>
 						</div>
 					</div>

@@ -1,7 +1,7 @@
 <?php
 
-define('DB_NAME', 'selling_computer');
-// <<<<<<< HEAD
+define('DB_NAME', 'cnweb');
+
 define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 
