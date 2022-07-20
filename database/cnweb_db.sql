@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 19, 2022 lúc 09:46 PM
--- Phiên bản máy phục vụ: 10.4.24-MariaDB
--- Phiên bản PHP: 8.1.6
+-- Host: 127.0.0.1
+-- Generation Time: Jul 19, 2022 at 06:54 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `selling_computer`
+-- Database: `cnweb`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -33,7 +33,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`admin_username`, `admin_password`) VALUES
@@ -42,7 +42,7 @@ INSERT INTO `admin` (`admin_username`, `admin_password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `bill`
+-- Table structure for table `bill`
 --
 
 CREATE TABLE `bill` (
@@ -56,20 +56,22 @@ CREATE TABLE `bill` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `bill`
+-- Dumping data for table `bill`
 --
 
 INSERT INTO `bill` (`bill_id`, `product_id`, `user_name`, `date_bill`, `total_money`, `quantity`, `bill_status`) VALUES
-(1, 10001, 'ducanh2702', '2022-07-17 06:41:42', 14990000, 1, 1),
-(2, 10004, 'ducanh2702', '2022-07-17 06:47:16', 35990000, 1, 1),
-(3, 10001, 'ducanh2702', '2022-07-17 11:58:26', 14990000, 1, 1),
-(4, 10001, 'ducanh2702', '2022-07-19 18:28:27', 14990000, 1, 1),
-(5, 12, 'ducanh2702', '2022-07-19 21:46:53', 10000000, 1, 0);
+(10001, 10001, 'congvq', '2022-07-19 09:02:49', NULL, 1, 0),
+(10002, 10001, 'congvq', '2022-07-19 04:03:36', 14990000, 1, 0),
+(10003, 10002, 'congvq', '2022-07-19 04:05:43', 13790000, 1, 1),
+(10004, 10001, 'congvq', '2022-07-19 04:07:41', 14990000, 1, 1),
+(10005, 10002, 'congvq', '2022-07-19 09:11:07', 13790000, 1, 2),
+(10006, 10003, 'congvq', '2022-07-19 09:11:42', 17490000, 1, 2),
+(10007, 10002, 'congvq', '2022-07-19 12:20:06', 13790000, 1, 0);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `cart`
+-- Table structure for table `cart`
 --
 
 CREATE TABLE `cart` (
@@ -78,17 +80,16 @@ CREATE TABLE `cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `cart`
+-- Dumping data for table `cart`
 --
 
 INSERT INTO `cart` (`cart_id`, `user_name`) VALUES
-(4, 'cong'),
-(3, 'ducanh2702');
+(3, 'congvq');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `cart_products`
+-- Table structure for table `cart_products`
 --
 
 CREATE TABLE `cart_products` (
@@ -100,7 +101,7 @@ CREATE TABLE `cart_products` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `computer_mouse_products`
+-- Table structure for table `computer_mouse_products`
 --
 
 CREATE TABLE `computer_mouse_products` (
@@ -113,7 +114,7 @@ CREATE TABLE `computer_mouse_products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `computer_mouse_products`
+-- Dumping data for table `computer_mouse_products`
 --
 
 INSERT INTO `computer_mouse_products` (`computer_mouse_product_id`, `product_id`, `standard_connection`, `connection_protocol`, `is_led`, `size`) VALUES
@@ -122,7 +123,7 @@ INSERT INTO `computer_mouse_products` (`computer_mouse_product_id`, `product_id`
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `computer_products`
+-- Table structure for table `computer_products`
 --
 
 CREATE TABLE `computer_products` (
@@ -138,7 +139,7 @@ CREATE TABLE `computer_products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `computer_products`
+-- Dumping data for table `computer_products`
 --
 
 INSERT INTO `computer_products` (`computer_product_id`, `product_id`, `s_cpu`, `s_ram`, `s_storage`, `screen`, `s_card`, `main_connection`, `os`) VALUES
@@ -146,13 +147,12 @@ INSERT INTO `computer_products` (`computer_product_id`, `product_id`, `s_cpu`, `
 (12, 10002, 'Intel Core i3-1115G4', '4GB DDR4 bus 3200 MHz', 256, '15.6\\\" FHD IPS', 'Intel UHD G4', 'USB-C 3.2', 'Windows 10 Home SL'),
 (13, 10003, 'Intel Core i5-9300H', '8GB DDR4 bus 2666 MHz', 256, '15.6\" FHD IPS', 'NVIDIA GeForce GTX 1650 4GB', 'USB-A, C', 'Windows 10'),
 (14, 30001, 'Ryzen 7 PRO 2700', '8GB DDR4 bus 2666 MHz', 256, '', 'Nvidia Geforce GT730 2GB', 'USB-A, SD', 'Windows 10'),
-(15, 10004, 'Intel Core i5 10300H', '8GB DDR4 bus 2933 MHz', 256, '15.6\" FHD+ IPS', ' Intel UHD 630', 'USB-C', 'Windows 10'),
-(16, 12, 'Intel Core i5-1100G4', '8', 256, '15.6\" HD TN', ' Intel UHD G4', 'USB-C 3.2', 'Free Dos');
+(15, 10004, 'Intel Core i5 10300H', '8GB DDR4 bus 2933 MHz', 256, '15.6\" FHD+ IPS', ' Intel UHD 630', 'USB-C', 'Windows 10');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `evaluate`
+-- Table structure for table `evaluate`
 --
 
 CREATE TABLE `evaluate` (
@@ -164,22 +164,10 @@ CREATE TABLE `evaluate` (
   `date_comment` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Đang đổ dữ liệu cho bảng `evaluate`
---
-
-INSERT INTO `evaluate` (`evaluate_id`, `user_name`, `product_id`, `star`, `your_comment`, `date_comment`) VALUES
-(1, 'cong', 10001, 4, 'oke ', '2022-07-19 04:38:37'),
-(2, 'cong', 10001, 4, 'oke ', '2022-07-19 04:38:41'),
-(3, 'cong', 10001, 4, 'oke ', '2022-07-19 04:40:38'),
-(4, 'cong', 10001, 4, 'oke ', '2022-07-19 04:42:33'),
-(5, 'cong', 10001, 4, 'oke ', '2022-07-19 04:43:11'),
-(6, 'cong', 10001, 4, 'oke ', '2022-07-19 04:43:58');
-
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `guest`
+-- Table structure for table `guest`
 --
 
 CREATE TABLE `guest` (
@@ -191,17 +179,16 @@ CREATE TABLE `guest` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `guest`
+-- Dumping data for table `guest`
 --
 
 INSERT INTO `guest` (`user_name`, `your_password`, `your_name`, `address`, `telephone`) VALUES
-('cong', '123456', 'Vũ Công', 'Hà Nội Hai Bà Trưng Thanh Nhàn', '0123456789'),
-('ducanh2702', '27022000', 'DUC ANH NGUYEN NANG', 'HN Hai Ba Trung Quynh Loi', '0392683826');
+('congvq', '123456', 'Công  Vũ', 'Hà Nội Hai Bà Trưng Bách Khoa', '0984263236');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `laptop`
+-- Table structure for table `laptop`
 --
 
 CREATE TABLE `laptop` (
@@ -211,20 +198,19 @@ CREATE TABLE `laptop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `laptop`
+-- Dumping data for table `laptop`
 --
 
 INSERT INTO `laptop` (`laptop_id`, `product_id`, `battery`) VALUES
 (2, 10001, 37),
 (3, 10002, 41),
 (4, 10003, 59),
-(5, 10004, 56),
-(6, 12, 50);
+(5, 10004, 56);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `pc`
+-- Table structure for table `pc`
 --
 
 CREATE TABLE `pc` (
@@ -234,7 +220,7 @@ CREATE TABLE `pc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `pc`
+-- Dumping data for table `pc`
 --
 
 INSERT INTO `pc` (`pc_id`, `product_id`, `i_case`) VALUES
@@ -243,7 +229,7 @@ INSERT INTO `pc` (`pc_id`, `product_id`, `i_case`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -260,11 +246,10 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`product_id`, `model`, `image`, `price`, `weigh`, `color`, `number_of_product`, `supplier`, `p_description`, `dis`) VALUES
-(12, 'DELL 3552', 'public/images/products/dell-3552.png', 10000000, 2, 'Đen', 20, 'Dell', 'Sản phẩm tốt trong tầm giá cho sinh viên ', 0),
 (10001, 'AVITA Liber V14 AMD', 'https://lumen.thinkpro.vn//backend/uploads/product/color_images/2021/4/23/liberv14a-summerpink-1.jpg', 14990000, 1.28, 'Pink', 100, 'AVITA', NULL, NULL),
 (10002, 'HP Pavilion 15 (Intel Gen 11)', 'https://lumen.thinkpro.vn//backend/uploads/product/color_images/2021/3/17/pavi15g11silver-1.jpg', 13790000, 1.75, 'Grey', 100, 'HP', NULL, NULL),
 (10003, 'Acer Nitro 5 2019', 'https://lumen.thinkpro.vn//backend/uploads/product/color_images/2020/7/16/acer-nitro-5-Nitro501NF-Adv.jpg', 17490000, 2.45, 'Black', 100, 'Acer', '', NULL),
@@ -273,11 +258,11 @@ INSERT INTO `products` (`product_id`, `model`, `image`, `price`, `weigh`, `color
 (30001, 'Lenovo ThinkCentre M725s SFF', 'https://lumen.thinkpro.vn//backend/uploads/product/color_images/2020/7/16/lenovo-thinkcentre-m725s-sff-ThinkCentreM725sSFF01NO-pwN.jpg', 15990000, 8, 'Black', 50, 'Lenovo', '', NULL);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `bill`
+-- Indexes for table `bill`
 --
 ALTER TABLE `bill`
   ADD PRIMARY KEY (`bill_id`),
@@ -285,35 +270,35 @@ ALTER TABLE `bill`
   ADD KEY `user_name` (`user_name`);
 
 --
--- Chỉ mục cho bảng `cart`
+-- Indexes for table `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`cart_id`),
   ADD KEY `user_name` (`user_name`);
 
 --
--- Chỉ mục cho bảng `cart_products`
+-- Indexes for table `cart_products`
 --
 ALTER TABLE `cart_products`
   ADD PRIMARY KEY (`cart_id`,`product_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Chỉ mục cho bảng `computer_mouse_products`
+-- Indexes for table `computer_mouse_products`
 --
 ALTER TABLE `computer_mouse_products`
   ADD PRIMARY KEY (`computer_mouse_product_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Chỉ mục cho bảng `computer_products`
+-- Indexes for table `computer_products`
 --
 ALTER TABLE `computer_products`
   ADD PRIMARY KEY (`computer_product_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Chỉ mục cho bảng `evaluate`
+-- Indexes for table `evaluate`
 --
 ALTER TABLE `evaluate`
   ADD PRIMARY KEY (`evaluate_id`),
@@ -321,128 +306,128 @@ ALTER TABLE `evaluate`
   ADD KEY `product_id` (`product_id`);
 
 --
--- Chỉ mục cho bảng `guest`
+-- Indexes for table `guest`
 --
 ALTER TABLE `guest`
   ADD PRIMARY KEY (`user_name`);
 
 --
--- Chỉ mục cho bảng `laptop`
+-- Indexes for table `laptop`
 --
 ALTER TABLE `laptop`
   ADD PRIMARY KEY (`laptop_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Chỉ mục cho bảng `pc`
+-- Indexes for table `pc`
 --
 ALTER TABLE `pc`
   ADD PRIMARY KEY (`pc_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Chỉ mục cho bảng `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `bill`
+-- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `bill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `bill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10008;
 
 --
--- AUTO_INCREMENT cho bảng `cart`
+-- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `computer_mouse_products`
+-- AUTO_INCREMENT for table `computer_mouse_products`
 --
 ALTER TABLE `computer_mouse_products`
   MODIFY `computer_mouse_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `computer_products`
+-- AUTO_INCREMENT for table `computer_products`
 --
 ALTER TABLE `computer_products`
-  MODIFY `computer_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `computer_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT cho bảng `evaluate`
+-- AUTO_INCREMENT for table `evaluate`
 --
 ALTER TABLE `evaluate`
-  MODIFY `evaluate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `evaluate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT cho bảng `laptop`
+-- AUTO_INCREMENT for table `laptop`
 --
 ALTER TABLE `laptop`
-  MODIFY `laptop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `laptop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT cho bảng `pc`
+-- AUTO_INCREMENT for table `pc`
 --
 ALTER TABLE `pc`
   MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `bill`
+-- Constraints for table `bill`
 --
 ALTER TABLE `bill`
   ADD CONSTRAINT `bill_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`),
   ADD CONSTRAINT `bill_ibfk_2` FOREIGN KEY (`user_name`) REFERENCES `guest` (`user_name`);
 
 --
--- Các ràng buộc cho bảng `cart`
+-- Constraints for table `cart`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`user_name`) REFERENCES `guest` (`user_name`);
 
 --
--- Các ràng buộc cho bảng `cart_products`
+-- Constraints for table `cart_products`
 --
 ALTER TABLE `cart_products`
   ADD CONSTRAINT `cart_products_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`),
   ADD CONSTRAINT `cart_products_ibfk_2` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`);
 
 --
--- Các ràng buộc cho bảng `computer_mouse_products`
+-- Constraints for table `computer_mouse_products`
 --
 ALTER TABLE `computer_mouse_products`
   ADD CONSTRAINT `computer_mouse_products_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
 
 --
--- Các ràng buộc cho bảng `computer_products`
+-- Constraints for table `computer_products`
 --
 ALTER TABLE `computer_products`
   ADD CONSTRAINT `computer_products_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
 
 --
--- Các ràng buộc cho bảng `evaluate`
+-- Constraints for table `evaluate`
 --
 ALTER TABLE `evaluate`
   ADD CONSTRAINT `evaluate_ibfk_1` FOREIGN KEY (`user_name`) REFERENCES `guest` (`user_name`),
   ADD CONSTRAINT `evaluate_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
 
 --
--- Các ràng buộc cho bảng `laptop`
+-- Constraints for table `laptop`
 --
 ALTER TABLE `laptop`
   ADD CONSTRAINT `laptop_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
 
 --
--- Các ràng buộc cho bảng `pc`
+-- Constraints for table `pc`
 --
 ALTER TABLE `pc`
   ADD CONSTRAINT `pc_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
